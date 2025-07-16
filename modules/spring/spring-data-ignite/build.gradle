@@ -31,10 +31,17 @@ dependencies {
     implementation project(":ignite-jdbc")
     implementation libs.spring.boot
     implementation libs.spring.boot.autoconfigure
-    implementation libs.spring.data.jdbc
+    implementation "org.springframework.data:spring-data-jdbc:4.0.0-SNAPSHOT"
 
     testImplementation libs.spring.boot.test
     testImplementation libs.assertj.core
     testImplementation testFixtures(project(':ignite-runner'))
     testImplementation testFixtures(project(':ignite-core'))
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://repo.spring.io/snapshot"
+    }
 }
